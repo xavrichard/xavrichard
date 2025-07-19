@@ -1,0 +1,144 @@
+/* Cache la version mobile par défaut */
+.hero-mobile { display: none; }
+
+/* Version desktop */
+.hero-fullheight {
+  height: 100vh;
+  overflow: hidden;
+}
+.hero-fullheight .row { height: 100%; margin:0; }
+.container-fluid { padding-left:0; padding-right:0; }
+
+.text-col {
+  background:#2b2b2b;
+  color:#fff;
+  position:relative;
+}
+.text-col p.lead { color:#d0d0d0; }
+
+.object-fit-cover {
+  object-fit:cover;
+  width:100%;
+  height:100%;
+  display:block;
+}
+.col-lg-6 { height:100%; }
+
+.rec-label-top {
+  position:absolute;
+  top:40px;
+  left:40px;
+  display:flex;
+  align-items:center;
+  font-size:1.2rem;
+  font-weight:500;
+  color:#fff;
+}
+.rec-label-top .rec-dot {
+  width:12px; height:12px;
+  margin-right:8px;
+  border-radius:50%;
+  background:red;
+  animation:blink 1s infinite;
+}
+@keyframes blink {0%{opacity:1;}50%{opacity:0;}100%{opacity:1;}}
+
+.bottom-info {
+  position:absolute;
+  bottom:20px;
+  left:40px;
+  right:40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:0.9rem;
+  flex-wrap:wrap;
+}
+.bottom-info a {
+  color:#fff;
+  text-decoration:none;
+}
+.bottom-info a:hover { text-decoration:underline; }
+
+/* Version mobile overlay */
+.hero-overlay {
+  position: relative;
+  height: 100vh;
+  background: url("images/DSC08636.jpg") center center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* commence en haut */
+  padding: 20px;
+}
+.rec-label-top-mobile {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #222;
+  display: flex;
+  align-items: center;
+}
+.rec-label-top-mobile .rec-dot {
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: red;
+  animation: blink 1s infinite;
+}
+.hero-center {
+  text-align: center;
+  color: #222;
+  margin-top: 120px; /* remonte le bloc texte vers le haut */
+}
+.bottom-info-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #e0e0e0;
+  margin-top: auto; /* collé en bas */
+}
+.bottom-info-mobile a {
+  color: #e0e0e0;
+  text-decoration: none;
+}
+.bottom-info-mobile a:hover { text-decoration: underline; }
+
+/* ----- Responsive pour redimensionner les textes desktop ----- */
+@media (max-width: 1200px) {
+  .text-col h1.display-3 {
+    font-size: 2.5rem;
+  }
+  .text-col p.lead {
+    font-size: 1.1rem;
+  }
+  .bottom-info {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .text-col h1.display-3 {
+    font-size: 2rem;
+  }
+  .text-col p.lead {
+    font-size: 1rem;
+  }
+  .bottom-info {
+    font-size: 0.8rem;
+  }
+}
+
+/* Media query pour activer la version mobile overlay */
+@media (max-width: 991.98px) {
+  .hero-desktop { display: none; }
+  .hero-mobile { display: block; }
+
+  .hero-center h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  .hero-center p.lead {
+    font-size: 1rem;
+  }
+}
